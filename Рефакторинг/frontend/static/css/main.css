@@ -1,0 +1,91 @@
+/* =============================================================================
+DISCORD CLONE - MAIN.CSS
+Базовые стили и CSS переменные
+============================================================================= */
+
+:root {
+    --bg-tertiary: #202225;
+    --bg-secondary: #2f3136;
+    --bg-primary: #36393f;
+    --channel-text: #8e9297;
+    --header-primary: #fff;
+    --text-normal: #dcddde;
+    --brand: #5865F2;
+    --brand-hover: #4752c4;
+    --green: #3ba55c;
+    --red: #ed4245;
+    --yellow: #faa61a;
+    --error: #f04747;
+    --mobile-header-height: 50px;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    -webkit-tap-highlight-color: transparent;
+}
+
+body {
+    font-family: 'Whitney', 'Helvetica Neue', Arial, sans-serif;
+    background-color: var(--bg-primary);
+    color: var(--text-normal);
+    height: 100vh;
+    overflow: hidden;
+    touch-action: manipulation;
+}
+
+/* Скроллбары */
+::-webkit-scrollbar {
+    width: 8px;
+    background-color: #2e3338;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #202225;
+    border-radius: 4px;
+}
+
+/* Автозаполнение форм */
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus {
+    -webkit-text-fill-color: var(--text-normal);
+    -webkit-box-shadow: 0 0 0px 1000px var(--bg-tertiary) inset;
+    transition: background-color 5000s ease-in-out 0s;
+}
+
+/* Уведомления */
+.notification {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    padding: 16px 24px;
+    border-radius: 8px;
+    color: white;
+    font-weight: 600;
+    font-size: 14px;
+    z-index: 1002;
+    animation: slideInRight 0.3s ease;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+    max-width: calc(100% - 48px);
+    word-wrap: break-word;
+}
+
+@keyframes slideInRight {
+    from { transform: translateX(100%); opacity: 0; }
+    to { transform: translateX(0); opacity: 1; }
+}
+
+.notification.success {
+    background: linear-gradient(135deg, var(--green), #2d7d46);
+}
+
+.notification.error {
+    background: linear-gradient(135deg, var(--error), #c23b3d);
+}
+
+.notification.warning {
+    background: linear-gradient(135deg, var(--yellow), #d48d12);
+    color: #000;
+}

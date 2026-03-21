@@ -1,0 +1,351 @@
+/* =============================================================================
+DISCORD CLONE - MOBILE.CSS
+Адаптация под мобильные устройства
+============================================================================= */
+
+/* Планшеты */
+@media (max-width: 1024px) {
+    .users-panel {
+        width: 200px;
+    }
+
+    .channels-nav {
+        width: 200px;
+    }
+}
+
+/* Мобильные устройства */
+@media (max-width: 768px) {
+    .servers-nav {
+        display: none;
+    }
+
+    .channels-nav {
+        display: none;
+        position: fixed;
+        left: 0;
+        top: 0;
+        height: 100%;
+        z-index: 998;
+        width: 280px;
+        transform: translateX(-100%);
+        transition: transform 0.3s ease;
+    }
+
+    .channels-nav.mobile-open {
+        transform: translateX(0);
+    }
+
+    .users-panel {
+        display: none;
+    }
+
+    .chat-header {
+        height: var(--mobile-header-height);
+        padding: 0 12px;
+        font-size: 15px;
+    }
+
+    .chat-area {
+        width: 100%;
+    }
+
+    .input-area {
+        padding: 0 12px 16px;
+    }
+
+    .input-wrapper {
+        padding: 12px;
+    }
+
+    .input-wrapper textarea {
+        font-size: 16px;
+    }
+
+    .messages {
+        padding: 12px;
+        padding-bottom: 90px;
+    }
+
+    .message {
+        margin-bottom: 12px;
+    }
+
+    .avatar {
+        width: 36px;
+        height: 36px;
+        font-size: 14px;
+        margin-right: 12px;
+    }
+
+    .user-info {
+        flex-direction: row;
+        padding: 8px 12px;
+        gap: 12px;
+    }
+
+    .user-avatar {
+        width: 40px;
+        height: 40px;
+        min-width: 40px;
+        min-height: 40px;
+        font-size: 18px;
+    }
+
+    .user-name {
+        font-size: 13px;
+        max-height: none;
+        text-align: left;
+    }
+
+    .user-actions {
+        margin-top: 0;
+        width: auto;
+        justify-content: flex-start;
+    }
+
+    .profile-btn,
+    .logout-btn {
+        min-width: auto;
+        padding: 0 16px;
+        height: 36px;
+        font-size: 12px;
+    }
+
+    .connection-status {
+        top: 10px;
+        bottom: auto;
+        right: 10px;
+        left: auto;
+        transform: none;
+        font-size: 10px;
+        padding: 4px 8px;
+        max-width: 150px;
+        white-space: nowrap;
+        z-index: 1000;
+    }
+
+    .modal {
+        padding: 10px;
+        align-items: flex-end;
+    }
+
+    .verify-box {
+        width: 100%;
+        max-width: 100%;
+        padding: 24px;
+        border-radius: 16px 16px 0 0;
+        margin-bottom: 0;
+        max-height: 85vh;
+    }
+
+    .profile-modal {
+        padding: 0;
+        align-items: flex-end;
+    }
+
+    .profile-container {
+        width: 100%;
+        max-width: 100%;
+        max-height: 95vh;
+        border-radius: 16px 16px 0 0;
+        margin-bottom: 0;
+    }
+
+    .profile-header {
+        border-radius: 16px 16px 0 0;
+        padding: 20px;
+    }
+
+    .profile-avatar-large {
+        width: 80px;
+        height: 80px;
+        font-size: 32px;
+    }
+
+    .profile-name {
+        font-size: 20px;
+    }
+
+    .profile-body {
+        padding: 16px;
+    }
+
+    .profile-field input {
+        font-size: 16px;
+        min-height: 48px;
+    }
+
+    .profile-btn {
+        min-height: 48px;
+        width: 100%;
+        min-width: auto;
+    }
+
+    .profile-session-item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+    }
+
+    .profile-session-terminate {
+        width: 100%;
+    }
+
+    .profile-stats-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .profile-email-row {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .profile-email-input {
+        min-width: 100%;
+    }
+
+    .verify-email-btn {
+        width: 100%;
+        justify-content: center;
+    }
+
+    #auth-screen {
+        padding: 15px;
+    }
+
+    .auth-box {
+        width: 100%;
+        padding: 24px;
+        border-radius: 16px;
+    }
+
+    .auth-box h2 {
+        font-size: 22px;
+    }
+
+    .auth-box input {
+        font-size: 16px;
+        min-height: 48px;
+    }
+
+    .auth-box button {
+        font-size: 16px;
+        min-height: 48px;
+    }
+
+    .notification {
+        left: 16px;
+        right: 16px;
+        bottom: 16px;
+        max-width: none;
+    }
+
+    ::-webkit-scrollbar {
+        width: 4px;
+    }
+
+    ::-webkit-scrollbar-thumb {
+        background: var(--bg-tertiary);
+    }
+
+    .message.own .message-bubble,
+    .message.other .message-bubble {
+        max-width: 85%;
+    }
+}
+
+/* Очень маленькие экраны */
+@media (max-width: 375px) {
+    .auth-box {
+        padding: 20px;
+    }
+
+    .verify-box {
+        padding: 20px;
+    }
+
+    .profile-body {
+        padding: 12px;
+    }
+
+    .profile-avatar-large {
+        width: 70px;
+        height: 70px;
+        font-size: 28px;
+    }
+
+    .user-avatar {
+        width: 36px;
+        height: 36px;
+        min-width: 36px;
+        min-height: 36px;
+        font-size: 16px;
+    }
+}
+
+/* Landscape ориентация */
+@media (max-width: 768px) and (orientation: landscape) {
+    .modal {
+        align-items: center;
+    }
+
+    .verify-box {
+        max-height: 90vh;
+        border-radius: 12px;
+    }
+
+    .profile-modal {
+        align-items: center;
+    }
+
+    .profile-container {
+        max-height: 90vh;
+        border-radius: 12px;
+    }
+}
+
+/* Мобильное меню каналов */
+.channels-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 997;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.channels-overlay.active {
+    display: block;
+    opacity: 1;
+}
+
+.mobile-chat-header {
+    display: none;
+    height: var(--mobile-header-height);
+    padding: 0 12px;
+    align-items: center;
+    justify-content: space-between;
+    background: var(--bg-primary);
+    border-bottom: 1px solid #26272d;
+}
+
+@media (max-width: 768px) {
+    .mobile-chat-header {
+        display: flex;
+    }
+
+    .chat-header {
+        display: none;
+    }
+
+    .mobile-close-channels {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+}

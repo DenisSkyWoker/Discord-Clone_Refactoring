@@ -1,0 +1,485 @@
+/* =============================================================================
+DISCORD CLONE - PROFILE.CSS
+Стили профиля пользователя
+============================================================================= */
+
+.profile-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.85);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 1001;
+    backdrop-filter: blur(8px);
+    animation: fadeIn 0.2s ease;
+    padding: 20px;
+}
+
+.profile-container {
+    background: var(--bg-primary);
+    border-radius: 12px;
+    width: 500px;
+    max-width: 100%;
+    max-height: 90vh;
+    overflow-y: auto;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(32, 34, 37, 0.6);
+    animation: slideUp 0.3s ease;
+    -webkit-overflow-scrolling: touch;
+}
+
+.profile-container::-webkit-scrollbar {
+    width: 8px;
+}
+
+.profile-container::-webkit-scrollbar-track {
+    background: var(--bg-primary);
+}
+
+.profile-container::-webkit-scrollbar-thumb {
+    background: var(--bg-tertiary);
+    border-radius: 4px;
+}
+
+.profile-header {
+    background: linear-gradient(135deg, var(--brand), var(--brand-hover));
+    padding: 24px;
+    border-radius: 12px 12px 0 0;
+    text-align: center;
+    position: relative;
+}
+
+.profile-close-btn {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    background: rgba(0, 0, 0, 0.3);
+    border: none;
+    color: white;
+    width: 32px;
+    height: 32px;
+    min-width: 32px;
+    min-height: 32px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+}
+
+.profile-close-btn:hover {
+    background: rgba(0, 0, 0, 0.5);
+    transform: rotate(90deg);
+}
+
+.profile-avatar-large {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background: white;
+    color: var(--brand);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 40px;
+    font-weight: bold;
+    margin: 0 auto 16px;
+    border: 4px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+}
+
+.profile-name {
+    color: white;
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 8px;
+}
+
+.profile-email {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 14px;
+}
+
+.profile-body {
+    padding: 24px;
+}
+
+.profile-section {
+    margin-bottom: 24px;
+    padding-bottom: 24px;
+    border-bottom: 1px solid var(--bg-tertiary);
+}
+
+.profile-section:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.profile-section-title {
+    color: var(--channel-text);
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    font-weight: 600;
+    margin-bottom: 16px;
+}
+
+.profile-field {
+    margin-bottom: 16px;
+}
+
+.profile-field label {
+    display: block;
+    color: var(--channel-text);
+    font-size: 12px;
+    font-weight: 600;
+    margin-bottom: 8px;
+    text-transform: uppercase;
+}
+
+.profile-field input {
+    background: var(--bg-tertiary);
+    padding: 12px 16px;
+    border-radius: 6px;
+    border: 1px solid transparent;
+    width: 100%;
+    color: var(--text-normal);
+    font-size: 16px;
+    transition: all 0.2s ease;
+    box-sizing: border-box;
+    min-height: 44px;
+}
+
+.profile-field input:focus {
+    border-color: var(--brand);
+    outline: none;
+    background: #1a1c1f;
+}
+
+.profile-field input:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.profile-status-badge {
+    display: inline-block;
+    padding: 4px 12px;
+    border-radius: 12px;
+    font-size: 12px;
+    font-weight: 600;
+    margin-left: 8px;
+}
+
+.profile-status-badge.verified {
+    background: rgba(59, 165, 92, 0.2);
+    color: var(--green);
+}
+
+.profile-status-badge.unverified {
+    background: rgba(250, 166, 26, 0.2);
+    color: var(--yellow);
+}
+
+.profile-btn {
+    background: var(--brand);
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 6px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-size: 14px;
+    width: auto;
+    min-height: 44px;
+    min-width: 120px;
+}
+
+.profile-btn:hover {
+    background: var(--brand-hover);
+    transform: translateY(-1px);
+}
+
+.profile-btn.secondary {
+    background: var(--bg-tertiary);
+    color: var(--text-normal);
+}
+
+.profile-btn.secondary:hover {
+    background: var(--bg-secondary);
+}
+
+.profile-btn.danger {
+    background: var(--red);
+    color: white;
+}
+
+.profile-btn.danger:hover {
+    background: #c23b3d;
+}
+
+.profile-btn:disabled {
+    background: var(--channel-text);
+    cursor: not-allowed;
+    transform: none;
+}
+
+.profile-info-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 0;
+    border-bottom: 1px solid var(--bg-tertiary);
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.profile-info-row:last-child {
+    border-bottom: none;
+}
+
+.profile-info-label {
+    color: var(--channel-text);
+    font-size: 14px;
+}
+
+.profile-info-value {
+    color: var(--text-normal);
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.profile-session-item {
+    background: var(--bg-tertiary);
+    padding: 12px 16px;
+    border-radius: 6px;
+    margin-bottom: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.profile-session-info {
+    flex: 1;
+    min-width: 200px;
+}
+
+.profile-session-device {
+    color: var(--text-normal);
+    font-size: 14px;
+    font-weight: 500;
+    margin-bottom: 4px;
+}
+
+.profile-session-location {
+    color: var(--channel-text);
+    font-size: 12px;
+}
+
+.profile-session-current {
+    background: rgba(59, 165, 92, 0.2);
+    border: 1px solid var(--green);
+}
+
+.profile-session-terminate {
+    background: var(--red);
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    min-height: 36px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 12px;
+    font-weight: 500;
+    transition: all 0.2s ease;
+    white-space: nowrap;
+}
+
+.profile-session-terminate:hover {
+    background: #c23b3d;
+}
+
+.profile-success-message {
+    background: rgba(59, 165, 92, 0.1);
+    border: 1px solid var(--green);
+    color: var(--green);
+    padding: 12px 16px;
+    border-radius: 6px;
+    margin-bottom: 16px;
+    font-size: 14px;
+    display: none;
+}
+
+.profile-error-message {
+    background: rgba(237, 66, 69, 0.1);
+    border: 1px solid var(--red);
+    color: var(--red);
+    padding: 12px 16px;
+    border-radius: 6px;
+    margin-bottom: 16px;
+    font-size: 14px;
+    display: none;
+}
+
+.profile-stats-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+    margin-top: 16px;
+}
+
+.profile-stat-card {
+    background: var(--bg-tertiary);
+    padding: 16px;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.profile-stat-value {
+    color: var(--header-primary);
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 4px;
+}
+
+.profile-stat-label {
+    color: var(--channel-text);
+    font-size: 12px;
+    text-transform: uppercase;
+}
+
+/* Email верификация */
+.profile-email-row {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    margin-bottom: 16px;
+    flex-wrap: wrap;
+}
+
+.profile-email-input {
+    flex: 1;
+    min-width: 200px;
+    background: var(--bg-tertiary);
+    padding: 12px 16px;
+    border-radius: 6px;
+    border: 1px solid transparent;
+    color: var(--text-normal);
+    font-size: 16px;
+    transition: all 0.2s ease;
+    min-height: 44px;
+}
+
+.profile-email-input:focus {
+    border-color: var(--brand);
+    outline: none;
+    background: #1a1c1f;
+}
+
+.verify-email-btn {
+    background: rgba(59, 165, 92, 0.15);
+    color: var(--green);
+    border: 1px solid rgba(59, 165, 92, 0.3);
+    padding: 12px 16px;
+    min-height: 44px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 13px;
+    font-weight: 600;
+    transition: all 0.2s ease;
+    white-space: nowrap;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.verify-email-btn:hover:not(:disabled) {
+    background: rgba(59, 165, 92, 0.25);
+    border-color: var(--green);
+    transform: translateY(-1px);
+}
+
+.verify-email-btn:disabled {
+    background: var(--bg-tertiary);
+    color: var(--channel-text);
+    border-color: transparent;
+    cursor: not-allowed;
+    transform: none;
+}
+
+.verify-email-btn.sending {
+    background: rgba(250, 166, 26, 0.15);
+    color: var(--yellow);
+    border-color: rgba(250, 166, 26, 0.3);
+    animation: pulse 1s infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.6; }
+}
+
+.verify-email-timer {
+    font-size: 12px;
+    color: var(--channel-text);
+    margin-top: 8px;
+    text-align: center;
+    display: none;
+    padding: 8px 12px;
+    background: var(--bg-tertiary);
+    border-radius: 6px;
+}
+
+.verify-email-timer.active {
+    display: block;
+    animation: slideIn 0.3s ease;
+}
+
+.verify-email-success,
+.verify-email-error {
+    padding: 10px 16px;
+    border-radius: 6px;
+    margin-top: 8px;
+    font-size: 13px;
+    display: none;
+    text-align: center;
+}
+
+.verify-email-success {
+    background: rgba(59, 165, 92, 0.1);
+    border: 1px solid var(--green);
+    color: var(--green);
+}
+
+.verify-email-error {
+    background: rgba(237, 66, 69, 0.1);
+    border: 1px solid var(--red);
+    color: var(--red);
+}
+
+.verify-email-success.active,
+.verify-email-error.active {
+    display: block;
+    animation: slideIn 0.3s ease;
+}
+
+.verification-code-container {
+    background: var(--bg-tertiary);
+    padding: 16px;
+    border-radius: 8px;
+    border: 1px solid rgba(88, 101, 242, 0.3);
+    animation: slideIn 0.3s ease;
+}
+
+@keyframes slideIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
